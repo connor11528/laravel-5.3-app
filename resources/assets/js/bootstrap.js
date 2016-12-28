@@ -8,6 +8,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+window.GOOGLE_AUTOCOMPLETE_KEY = "AIzaSyBDBrWOEiYNTbOp05CoWBGuq4hIwAA6yEs";
 require('bootstrap-sass');
 
 /**
@@ -43,3 +44,4 @@ Vue.http.interceptors.push((request, next) => {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+

@@ -14,5 +14,10 @@
     "lodash": "^4.14.0",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3"
+  },
+  "dependencies": {
+    "google-autocomplete-vue": "^1.0.12",
+    "vue": "^1.0.28",
+    "vuex": "^2.1.1"
   }
 }

@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// user must be logged in
+Route::group(array('before' => 'auth'), function(){
+
+    Route::get('/home', 'HomeController@index');
+});
+
