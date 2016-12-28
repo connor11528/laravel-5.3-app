@@ -13,6 +13,14 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+import { load } from 'vue-google-maps'
+
+load({
+  key: 'AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k',
+  v: '3.24',                // Google Maps API version
+  libraries: 'places',   // If you want to use places input
+});
+
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
