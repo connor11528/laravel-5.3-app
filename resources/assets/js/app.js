@@ -21,7 +21,7 @@ load({
   libraries: 'places',   // If you want to use places input
 });
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('locationInput', require('./components/LocationInput.vue'));
 
 const app = new Vue({
     el: 'body'
