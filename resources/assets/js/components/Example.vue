@@ -15,8 +15,12 @@
         ready() {
             console.log('Component ready.')
         },
-        data: {
-            output: {}, address: {}, sent: false
+        data: function(){
+            return {
+                output: {}, 
+                address: {}, 
+                sent: false
+            };
         },
 
         computed:{
