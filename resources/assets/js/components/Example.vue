@@ -1,4 +1,5 @@
 <template>
+    <h1>Google Autocomplete</h1>
     <google-autocomplete
         class = "input"
         placeholder = "type your address"
