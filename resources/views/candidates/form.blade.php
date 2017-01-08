@@ -42,4 +42,3 @@
 <div class='form-group'>
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-lg btn-success form-control']) !!}
 </div>
---}}

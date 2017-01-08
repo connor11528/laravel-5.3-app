@@ -10,6 +10,9 @@
 					{{ $candidate->name }}
 				</a>
 			</h2>
+			<a href="{{ route('candidates.edit', $candidate->id) }}">
+				Edit candidate
+			</a>
 			<div class='body'>
 				<pre>{{ $candidate }}</pre>
 			</div>

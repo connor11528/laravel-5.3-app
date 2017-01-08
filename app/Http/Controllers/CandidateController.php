@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Candidate;
 
 class CandidateController extends Controller
@@ -40,7 +40,7 @@ class CandidateController extends Controller
         $input = Request::all();
         Candidate::create($input);
 
-        return redirect('candidates.index');
+        return redirect('candidates');
     }
 
     /**
@@ -79,9 +79,11 @@ class CandidateController extends Controller
     public function update(Request $request, $id)
     {
         $candidate = Candidate::findOrFail($id);
-        $candidate->update($candidate->all());
 
-        return redirect('candidates.index');
+        $input = Request::all();
+        $candidate->update($input);
+
+        return redirect('candidates');
     }
 
     /**
