@@ -16,7 +16,7 @@ class CandidateController extends Controller
     {
         $candidates = Candidate::all();
 
-        return $candidates;
+        return view('candidates.index', compact('candidates'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidates.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = Request::all();
+        Candidate::create($input);
+
+        return redirect('candidates.index');
     }
 
     /**
@@ -48,7 +51,9 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-        //
+        $candidate = Candidate::findOrFail($id);
+
+        return view('candidates.show', compact('candidate'));
     }
 
     /**
@@ -59,7 +64,9 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $candidate = Candidate::findOrFail($id);
+
+        return view('candidates.edit', compact('candidate'));
     }
 
     /**
@@ -71,7 +78,10 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $candidate = Candidate::findOrFail($id);
+        $candidate->update($candidate->all());
+
+        return redirect('candidates.index');
     }
 
     /**
@@ -82,6 +92,9 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidate = Candidate::findOrFail($id);
+        $candidate->delete();
+        
+        return redirect('candidates.index');
     }
 }

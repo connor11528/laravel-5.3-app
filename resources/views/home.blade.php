@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        	{!! Form::open(['action' => 'CandidateController@create']) !!}
-        		{!! Form::text('name'); !!}
-            	<location-input></location-input>
+        	<h1>Welcome to Home Page</h1>
 
-            {!! Form::close() !!}
+        	<p>You have to be logged in in order to see this page!</p>
+
+        	<a href='/candidates' class='btn btn-primary'>Go to candidates</a>
         </div>
     </div>
 </div>
