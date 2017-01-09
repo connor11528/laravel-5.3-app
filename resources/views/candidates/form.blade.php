@@ -31,15 +31,22 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createCandidate(a, b, c){
-	console.log('create form submitted!');
-	var place = autocomplete.getPlace();
-	console.log(place);
-
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
 	var phone = document.getElementById("phone").value;
 
-	console.log(name, email, phone);
+	var place = autocomplete.getPlace();
+	console.log(place);
+
+	var latitude = place.geometry.location.lat();
+	var longitude = place.geometry.location.lng();
+	console.log(latitude, longitude);
+
+	// for grabbing the rest of the address components:
+	// https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+
+	// then send form to server etc
+
 }
 
 function editCandidate(){
