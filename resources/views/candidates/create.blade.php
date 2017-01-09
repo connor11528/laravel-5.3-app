@@ -7,7 +7,7 @@
 
 		<hr>
 		
-		{!! Form::open(['action' => 'CandidateController@store', 'onsubmit' => 'handleSubmit(this); return false;']) !!}
+		{!! Form::open(['action' => 'CandidateController@store', 'onsubmit' => 'createCandidate(); return false;']) !!}
 			@include('candidates.form', ['submitButtonText' => 'Add Candidate'])
 		{!! Form::close() !!}
 	</div>
