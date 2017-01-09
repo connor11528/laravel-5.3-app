@@ -5,6 +5,8 @@
             :types.sync="placeInput.types"
             :component-restrictions.sync="placeInput.restrictions"
             class='form-control'
+            label='Location: '
+            name='location'
     ></place-input>
 
     <pre>{{ placeInput.place | json }}</pre>

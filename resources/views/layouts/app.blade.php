@@ -20,6 +20,8 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k&v=3.exp&sensor=false&libraries=places"></script>
+
 </head>
 <body>
     <div id="app">

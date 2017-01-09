@@ -3,6 +3,7 @@
 
 @section('content')
 	<h1>Candidates</h1>
+	<a href="{{ route('candidates.create') }}" class="btn btn-default">Add Candidate</a>
 	<div>
 		@forelse($candidates as $candidate)
 			<h2>
