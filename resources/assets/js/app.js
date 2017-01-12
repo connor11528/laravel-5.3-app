@@ -13,16 +13,19 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-// import { load } from 'vue-google-maps'
+import { load } from 'vue-google-maps'
 
-// load({
-//   key: 'AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k',
-//   v: '3.24',                // Google Maps API version
-//   libraries: 'places',   // If you want to use places input
-// });
+load({
+  key: 'AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k',
+  v: '3.24',                // Google Maps API version
+  libraries: 'places',   // If you want to use places input
+});
 
-// Vue.component('locationInput', require('./components/LocationInput.vue'));
+Vue.component('locationInput', require('./components/LocationInput.vue'));
+Vue.component('candidatesForm', require('./components/CandidatesForm.vue'));
 
 const app = new Vue({
     el: 'body'
 });
+
+

@@ -1,4 +1,4 @@
-
+{{ csrf_field() }}
 <div class='form-group'>
 	{!! Form::label('name', 'Name:') !!}
 	{!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) !!}
@@ -15,8 +15,7 @@
 </div>
 
 <div class='form-group'>
-	<label>Location:</label>
-	<input id="location" type="text" name='location' class='form-control'>
+ 	<input id="location" type="text" name='location' class='form-control'> 
 </div>
 
 <script>
@@ -35,17 +34,14 @@ function createCandidate(a, b, c){
 	var email = document.getElementById("email").value;
 	var phone = document.getElementById("phone").value;
 
-	var place = autocomplete.getPlace();
-	console.log(place);
+	// var place = autocomplete.getPlace();
+	// console.log(place);
 
-	var latitude = place.geometry.location.lat();
-	var longitude = place.geometry.location.lng();
-	console.log(latitude, longitude);
+	// var latitude = place.geometry.location.lat();
+	// var longitude = place.geometry.location.lng();
+	// console.log(latitude, longitude);
 
-	// for grabbing the rest of the address components:
-	// https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
 
-	// then send form to server etc
 
 }
 

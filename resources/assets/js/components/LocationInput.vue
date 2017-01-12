@@ -29,11 +29,11 @@
                 }
             }
         },
+        props: ['location'],
 
         components: {
             PlaceInput
         },
-
         ready() {
         }
     }
