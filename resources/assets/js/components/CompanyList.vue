@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    console.log('here');
     export default {
 
         data() {

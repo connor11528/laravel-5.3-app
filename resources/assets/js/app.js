@@ -14,11 +14,12 @@ require('./bootstrap');
  */
 
 import { load } from 'vue-google-maps'
+import { store } from './store'
 
 load({
   key: 'AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k',
-  v: '3.24',                // Google Maps API version
-  libraries: 'places',   // If you want to use places input
+  v: '3.24',             // Google Maps API version
+  libraries: 'places',   // for places input
 });
 
 Vue.component('locationInput', require('./components/LocationInput.vue'));
@@ -26,7 +27,8 @@ Vue.component('candidatesForm', require('./components/CandidatesForm.vue'));
 Vue.component('company-list', require('./components/CompanyList.vue'));
 
 const app = new Vue({
-    el: 'body'
+    el: 'body',
+    data: store
 });
 
 

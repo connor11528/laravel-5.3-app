@@ -13,22 +13,27 @@
     </div>
 
     <button class='btn btn-primary'>{{buttontext}}</button>
+
+
 </div>
 
 </template>
 
 <script>
+import { store } from '../store'
 
-    export default {
+export default {
 
-        data() {
-            return {}
-        },
-
-        props: ['endpoint', 'buttontext'],
-
-
-        ready() {
+    data() {
+        return {
+            sharedState: store.state
         }
+    },
+
+    props: ['endpoint', 'buttontext'],
+
+
+    ready() {
     }
+}
 </script>

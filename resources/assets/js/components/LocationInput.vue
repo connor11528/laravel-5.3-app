@@ -9,18 +9,18 @@
             name='location'
     ></place-input>
 
-    <pre>{{ placeInput.place | json }}</pre>
-
 </template>
 
 <script>
+    import { store } from '../store'
     import { PlaceInput, Map } from 'vue-google-maps'
 
     export default {
 
         data() {
             return {
-                placeInput: {
+                sharedState: store.state,
+                privteState: {
                     place: {
                         name: ''
                     },
