@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('candidates', 'CandidateController');
+
+Route::get('/companies', function(){
+	return view('companies.index');
+})->middleware('auth');

@@ -20,7 +20,14 @@ class CompaniesTableSeeder extends Seeder
 	            'state' => $faker->stateAbbr
 	        ];
 
-        	$company['website'] = 'www.'.$company['name'].'.com';
+	        // strip spaces and commas
+	        $name = str_replace(' ', '', $company['name']);
+	        $name = str_replace(',', '', $name);
+
+	        // add website
+        	$company['website'] = 'www.'.$name.'.com';
+
+        	// save to database
         	DB::table('companies')->insert($company);
         }
     }

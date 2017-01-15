@@ -23,6 +23,7 @@ load({
 
 Vue.component('locationInput', require('./components/LocationInput.vue'));
 Vue.component('candidatesForm', require('./components/CandidatesForm.vue'));
+Vue.component('company-list', require('./components/CompanyList.vue'));
 
 const app = new Vue({
     el: 'body'

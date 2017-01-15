@@ -38,8 +38,6 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
         $input = Request::all();
-
-        dd($input);
         Candidate::create($input);
 
         return redirect('candidates');

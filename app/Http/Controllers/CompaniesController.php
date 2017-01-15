@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,6 @@ class CompaniesController extends Controller
     public function index()
     {
         $companies = Company::all();
-
         return $companies;
     }
 
@@ -37,7 +37,8 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = Request::all();
+        return Company::create($input);
     }
 
     /**
@@ -48,7 +49,7 @@ class CompaniesController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return $company;
     }
 
     /**
@@ -71,7 +72,10 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $company = Company::findOrFail($id);
+
+        $input = Request::all();
+        $company->update($input);
     }
 
     /**
