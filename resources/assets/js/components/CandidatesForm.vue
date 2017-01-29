@@ -9,24 +9,30 @@
     </div>
 
     <div class='form-group'>
-        <location-input></location-input>
+        <location-input :location="locationData"></location-input>
     </div>
 
     <button class='btn btn-primary'>{{buttontext}}</button>
 
+    <pre>{{ locationData | json }}</pre>
 
 </div>
 
 </template>
 
 <script>
-import { store } from '../store'
 
 export default {
 
     data() {
         return {
-            sharedState: store.state
+            locationData: {
+                place: {
+                    name: ''
+                },
+                types: [],
+                restrictions: {'country': 'usa'}
+            }
         }
     },
 

@@ -8,14 +8,7 @@
 		<hr>
 
 		<candidates-form endpoint='/candidates/create' buttontext='Add Candidate'></candidates-form>
-		
-		{{-- 		
-		{!! Form::open(['action' => 'CandidateController@store', 'onsubmit' => 'createCandidate(); return false;']) !!}
-			@include('candidates.form', ['submitButtonText' => 'Add Candidate'])
-		{!! Form::close() !!} 
-		--}}
-
-		
+			
 	</div>
 @stop
 

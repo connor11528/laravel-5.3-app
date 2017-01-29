@@ -14,7 +14,6 @@ require('./bootstrap');
  */
 
 import { load } from 'vue-google-maps'
-import { store } from './store'
 
 load({
   key: 'AIzaSyC2wEaK7ov2WrNNicuJ33KNb6Xp4JGG93k',
