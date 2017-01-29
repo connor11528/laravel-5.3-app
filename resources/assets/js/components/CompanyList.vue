@@ -6,7 +6,6 @@
 
 <script>
     export default {
-
         data() {
             return {
                 companies: []
@@ -20,9 +19,7 @@
                 });
             }
         },
-
         props: [],
-
         ready() {
             this.fetchCompanyList();
         }

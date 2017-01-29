@@ -13,16 +13,13 @@
     import { PlaceInput, Map } from 'vue-google-maps'
 
     export default {
-
         props: ['location'],
-
         components: {
             PlaceInput
-        },
-        ready() {
         }
     }
 </script>
+
 <style>
     label { display: block; }
 </style>
