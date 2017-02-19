@@ -3,11 +3,11 @@
     <div class='row'>
         <div class="form-group col-xs-6">
             <label>First</label>
-            <input type='text' class='form-control' v-model='fname' placeholder='First Name'>
+            <input type='text' class='form-control' v-model='first' placeholder='First Name'>
         </div>
         <div class="form-group col-xs-6">
             <label>Last</label>
-            <input type='text' class='form-control' v-model='fname' placeholder='Last Name'>
+            <input type='text' class='form-control' v-model='last' placeholder='Last Name'>
         </div>
     </div>
 
@@ -38,33 +38,49 @@
     </div>
 
     <button class='btn btn-default'>Cancel</button>
-    
-    <button class='btn btn-primary' v-on:click='submitForm'>{{buttontext}}</button>
 
-    <pre>{{ locationData | json }}</pre>
+    <button class='btn btn-primary' v-on:click='submitForm'>{{buttontext}}</button>
 </div>
 
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
-            name: '',
+            first: '',
+            last: '',
+            email: '',
+            phone: '',
             locationData: {
                 place: {
                     name: ''
                 },
                 types: [],
                 restrictions: {'country': 'usa'}
-            }
+            },
+            linkedin: '',
+            portfolio: ''
         }
     },
     props: ['endpoint', 'buttontext'],
     methods: {
         submitForm(){
-            // {{endpoint}}
-            console.log('send data to ', this.endpoint);
+            var candidate = {
+                first: this.first,
+                last: this.last,
+                email: this.email
+            };
+            console.log(candidate);
+            axios.post(this.endpoint, this._data)
+                .then((res, err)=>{
+                    console.log(res);
+                })
+                .catch((err)=>{
+                    console.error(err);
+                });
         }
     }
 }
