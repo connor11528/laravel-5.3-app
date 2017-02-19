@@ -51,6 +51,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                         <li><a href="{{ url('/candidates') }}">Candidates</a></li>
+                        <li><a href="{{ url('/jobs') }}">Jobs</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
