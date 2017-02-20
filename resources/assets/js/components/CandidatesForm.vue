@@ -47,40 +47,55 @@
 <script>
 import axios from 'axios';
 
+const blankDataObject = {
+    first: '',
+    last: '',
+    email: '',
+    phone: '',
+    locationData: {
+        place: {
+            name: ''
+        },
+        types: [],
+        restrictions: {'country': 'usa'}
+    },
+    linkedin: '',
+    portfolio: ''
+};
+
 export default {
     data() {
-        return {
-            first: '',
-            last: '',
-            email: '',
-            phone: '',
-            locationData: {
-                place: {
-                    name: ''
-                },
-                types: [],
-                restrictions: {'country': 'usa'}
-            },
-            linkedin: '',
-            portfolio: ''
-        }
+        return blankDataObject;
     },
     props: ['endpoint', 'buttontext'],
     methods: {
         submitForm(){
+            var vm = this;
             var candidate = {
                 first: this.first,
                 last: this.last,
-                email: this.email
+                email: this.email,
+                phone: this.phone,
+                latitude: this.locationData.place.geometry.location.lat(),
+                longitude: this.locationData.place.geometry.location.lng(),
+                linkedin: this.linkedin,
+                portfolio: this.portfolio
             };
+
             console.log(candidate);
-            axios.post(this.endpoint, this._data)
+            
+            axios.post(this.endpoint, candidate)
                 .then((res, err)=>{
-                    console.log(res);
+                    vm.$nextTick(function(){
+                        console.log(blankDataObject);
+                        vm = blankDataObject;
+                        console.log(vm);
+                    });
+                    console.log(res.data);
                 })
                 .catch((err)=>{
                     console.error(err);
-                });
+                })
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use Request;
 use App\Candidate;
 
@@ -40,7 +41,9 @@ class CandidateController extends Controller
         $input = Request::all();
         Candidate::create($input);
 
-        return redirect('candidates');
+        return response()->json([
+            'success' => 'true'
+        ]);
     }
 
     /**
