@@ -42,7 +42,7 @@ class CandidateController extends Controller
         Candidate::create($input);
 
         return response()->json([
-            'success' => 'true'
+            'success' => 'Candidate added successfully!'
         ]);
     }
 

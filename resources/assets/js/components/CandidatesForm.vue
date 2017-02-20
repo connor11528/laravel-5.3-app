@@ -1,5 +1,11 @@
 <template>
 <div>
+    <alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="400px" dismissable>
+      <span class="icon-ok-circled alert-icon-float-left"></span>
+      <strong>Candidate Added!</strong>
+      <p>You successfully read this important alert message.</p>
+    </alert>
+
     <div class='row'>
         <div class="form-group col-xs-6">
             <label>First</label>
@@ -46,6 +52,7 @@
 
 <script>
 import axios from 'axios';
+import { alert } from 'vue-strap';
 
 const blankDataObject = {
     first: '',
@@ -60,12 +67,17 @@ const blankDataObject = {
         restrictions: {'country': 'usa'}
     },
     linkedin: '',
-    portfolio: ''
+    portfolio: '',
+    showRight: false,
+    successMessage: ''
 };
 
 export default {
     data() {
         return blankDataObject;
+    },
+    components: {
+        alert
     },
     props: ['endpoint', 'buttontext'],
     methods: {
@@ -86,12 +98,17 @@ export default {
             
             axios.post(this.endpoint, candidate)
                 .then((res, err)=>{
-                    vm.$nextTick(function(){
-                        console.log(blankDataObject);
-                        vm = blankDataObject;
-                        console.log(vm);
-                    });
-                    console.log(res.data);
+                    vm.first = '';
+                    vm.last = '';
+                    vm.email = '';
+                    vm.phone = '';
+                    vm.latitude = ''
+                    vm.portfolio = '';
+                    // don't know how to clear the locationInput field
+
+                    // show alert
+                    vm.successMessage = res.data;
+                    vm.showRight = true;
                 })
                 .catch((err)=>{
                     console.error(err);
