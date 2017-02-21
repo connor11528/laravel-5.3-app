@@ -1,5 +1,15 @@
 # Laravel 5.3 Application with Vue.js
 
+Bootstrap table: http://bootstrap-table.wenzhixin.net.cn/getting-started/
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+
+
+
 Posts describing how the application is built, in sequential order.
 
 - [Generate Authentication for a Laravel 5.3 Web Application](https://medium.com/@connorleech/generate-authentication-for-a-laravel-5-3-web-app-384781a5529f#.lt3wnh1tr)

@@ -5,6 +5,8 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
 		<h1>Candidates</h1>
+		<table id="table"></table>
+		
 		<a href="{{ route('candidates.create') }}" class="btn btn-default">Add Candidate</a>
 		<div>
 			@forelse($candidates as $candidate)

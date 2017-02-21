@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <!-- Bootstrap Table CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
     <link href="/css/app.css" rel="stylesheet">
     
     
@@ -47,12 +49,15 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                        <li><a href="{{ url('/candidates') }}">Candidates</a></li>
-                        <li><a href="{{ url('/jobs') }}">Jobs</a></li>
-                    </ul>
+                    @if (!Auth::guest())
+                        <!-- Left Side Of Navbar -->
+                        <ul class="nav navbar-nav">
+                            &nbsp;
+                            <li><a href="{{ url('/candidates') }}">Candidates</a></li>
+                            <li><a href="{{ url('/jobs') }}">Jobs</a></li>
+                            <li><a href="{{ url('/companies') }}">Companies</a></li>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -91,5 +96,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <!-- Bootstrap Table Javascript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+    <script src='/js/table.js'></script> <!-- file is in public/js/table.js -->
+
 </body>
 </html>

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "bootstrap-table": "^1.11.0",
     "vue-google-maps": "^0.1.21",
     "vue-strap": "^1.1.36"
   }
