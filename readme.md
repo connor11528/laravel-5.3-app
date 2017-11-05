@@ -10,10 +10,21 @@ Posts describing how the application is built, in sequential order.
 
 - [Create and Edit records + Form Reuse in Laravel 5.3](https://medium.com/@connorleech/create-and-edit-records-form-reuse-in-laravel-5-3-f70a4b1d5f9b#.7xl7t81ei)
 
-### Other Resources
+## Other Resources
 
 - Vue.js Zip Code Finder - https://vuejsfeed.com/blog/vue-js-zip-code-finder
 
 - Bootstrap table - http://bootstrap-table.wenzhixin.net.cn/getting-started/
 
 - Vue-strap - https://yuche.github.io/vue-strap/
+
+## Install project
+
+```
+$ composer install
+$ npm install
+$ npm run watch
+$ php artisan serve
+```
+
+If you get an error about "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths." then run 
