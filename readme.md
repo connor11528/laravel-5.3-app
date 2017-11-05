@@ -12,6 +12,12 @@ Posts describing how the application is built, in sequential order.
 
 ## Other Resources
 
+- Vue.js animations and transitions: https://snipcart.com/blog/vuejs-transitions-animations
+
+- Building a custom Google Maps component with Vue 2: https://medium.com/founders-factory/building-a-custom-google-map-component-with-vue-js-d1c01ddd0b0a 
+
+- Intant AJAX search with Laravel and Vue.js: https://pineco.de/instant-ajax-search-laravel-vue/ 
+
 - Vue.js Zip Code Finder - https://vuejsfeed.com/blog/vue-js-zip-code-finder
 
 - Bootstrap table - http://bootstrap-table.wenzhixin.net.cn/getting-started/
@@ -21,10 +27,16 @@ Posts describing how the application is built, in sequential order.
 ## Install project
 
 ```
-$ composer install
-$ npm install
-$ npm run watch
-$ php artisan serve
+composer install
+npm install
+npm run watch
+php artisan serve
 ```
 
-If you get an error about "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths." then run 
+If you get an error about "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths." then run:
+
+```
+php artisan config:clear    
+php artisan key:generate
+php artisan config:cache
+```
